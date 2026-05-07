@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Image Generator</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Infinite image Generator v1.0</h1>
+
+      <div id="canvas-container">
+        <canvas id="mainCanvas" width="90" height="90"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="btnGenerate">Gerar Imagem</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat-line">
+          <span>Pixels Renderizados:</span>
+          <span class="highlight">10.000</span>
+        </div>
+        <div class="stat-line">
+          <span>Tentativa Atual:</span>
+          <span id="attemptCount" class="highlight">0</span>
+        </div>
+        <div class="stat-line">
+          <span>Status do Sistema:</span>
+          <span class="highlight" style="color: #ff4141">ENTROPIA ALTA</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
