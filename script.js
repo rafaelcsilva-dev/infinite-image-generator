@@ -1,6 +1,7 @@
 const canvas = document.getElementById("mainCanvas");
 const ctx = canvas.getContext("2d");
-const btn = document.getElementById("btnGenerate");
+const btnGenerate = document.getElementById("btnGenerate");
+const btnDownload = document.getElementById("btnDownload");
 const displayCount = document.getElementById("attemptCount");
 let counter = 0;
 
@@ -25,8 +26,27 @@ function generateChaos() {
   displayCount.innerText = counter.toLocaleString();
 }
 
+function downloadCanvas() {
+  // 1. Converte o conteúdo do canvas para uma imagem PNG
+  const imageURL = canvas.toDataURL("image/png");
+
+  // 2. Cria um link temporário na memória
+  const link = document.createElement("a");
+
+  // 3. Define o nome do arquivo que será baixado
+  link.download = `random-image-${counter}.png`;
+
+  // 4. Atribui a imagem ao link
+  link.href = imageURL;
+
+  // 5. Simula o clique para iniciar o download e remove o link
+  link.click();
+}
+
 // Event Listeners
-btn.addEventListener("click", generateChaos);
+btnGenerate.addEventListener("click", generateChaos);
+
+btnDownload.addEventListener("click", downloadCanvas);
 
 // Gerar a primeira imagem ao carregar
 window.onload = generateChaos;
